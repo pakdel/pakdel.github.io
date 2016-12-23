@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+  <link rel="shortcut icon" href="/favIcon_32x32.png" />
+
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <style>
+    table tr td {
+      text-align: left;
+      vertical-align: top;
+    }
+
+    table tr td:first-child {
+      text-align: center;
+      vertical-align: top;
+    }
+  </style>
+  <title>Namak by pakdel</title>
+</head>
+
+<body>
+  <header>
+    <div class="inner">
+      <h1>Namak</h1>
+      <h2>Salt Net API client</h2>
+      <a href="https://github.com/pakdel/Namak" class="button">
+        <small>View project on</small> GitHub</a>
+    </div>
+  </header>
+
+  <div id="content-wrapper">
+    <div class="inner clearfix">
+      <section id="main-content">
+        <h1>
+          <a id="namak" class="anchor" href="#namak" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>Error Codes</h1>
+        <p>Here is complete list of error codes:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>CODE</th>
+              <th>DETAILS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a name="000">000</a></td>
+              <td>Is added to non-production releases for testing</td>
+            </tr>
+            <tr>
+              <td>1xx</td>
+              <td>
+                <strong>Errors coming from NamakApplication</strong>
+              </td>
+            </tr>
+            <tr>
+              <td><a name="100">100</a></td>
+              <td>Could not load the dashboard. Please check your dashboard’s URL to be correct and the contents of the page to be a JSON array as documented in the README.md file.</td>
+            </tr>
+            <tr>
+              <td><a name="101">101</a></td>
+              <td>Could not load the dashboard. Got a null response when trying to get the Dashboard URL.</td>
+            </tr>
+            <tr>
+              <td><a name="102">102</a></td>
+              <td>Could not load the dashboard. Please make sure your dashboard has a valid JSON with the syntax specified in the documentation.</td>
+            </tr>
+            <tr>
+              <td><a name="103">103</a></td>
+              <td>This should never happen! In dashboardJSON neither &quot;title&quot; key is null, nor the value is non-finite number.</td>
+            </tr>
+            <tr>
+              <td><a name="104">104</a></td>
+              <td>Dashboard is too big! Each dashboard can have up to 99 commands.</td>
+            </tr>
+            <tr>
+              <td>2xx</td>
+              <td>
+                <strong>Errors coming from MainActivity</strong>
+              </td>
+            </tr>
+            <tr>
+              <td><a name="200">200</a></td>
+              <td>Incomplete settings. You will need at least one Salt Master and one Dashboard set up. Open settings page from the menu (or the wrench icon in the title bar).</td>
+            </tr>
+            <tr>
+              <td><a name="201">201</a></td>
+              <td>Not logged in. Open the left drawer and choose a SaltMaster to log into.</td>
+            </tr>
+            <tr>
+              <td><a name="202">202</a></td>
+              <td>Session Expired. Either relogin using the button on the bottom or open the left drawer and choose a SaltMaster to log into.</td>
+            </tr>
+            <tr>
+              <td>3xx</td>
+              <td>
+                <strong>Errors coming from DashboardAdapter</strong>
+              </td>
+            </tr>
+            <tr>
+              <td><a name="301">301</a></td>
+              <td>This should never happen! In getChild, we always get an item that exists.</td>
+            </tr>
+            <tr>
+              <td><a name="302">302</a></td>
+              <td>This should never happen! In getChildView, we already know that &quot;title&quot; exists.</td>
+            </tr>
+            <tr>
+              <td>4xx</td>
+              <td>
+                <strong>Errors coming from SaltMaster</strong>
+              </td>
+            </tr>
+            <tr>
+              <td><a name="401">401</a></td>
+              <td>This should never happen! In SaltMaster neither of &quot;eauth&quot;, &quot;username&quot; and &quot;password&quot; keys is null, nor the value is non-finite number.</td>
+            </tr>
+            <tr>
+              <td><a name="402">402</a></td>
+              <td>This should never happen! We are generating relative URLs ourselves.</td>
+            </tr>
+            <tr>
+              <td><a name="405">405</a></td>
+              <td>Unexpected response during login! Verify the Salt Net API service to be up and responding properly to login requests.</td>
+            </tr>
+            <tr>
+              <td><a name="410">41x</a></td>
+              <td>Login failed! Verify your SaltMaster address and credentials.</td>
+            </tr>
+            <tr>
+              <td><a name="411">411</a></td>
+              <td>Login timed out! Verify the SaltMaster address to be correct and the Salt API server to be up and running.</td>
+            </tr>
+            <tr>
+              <td><a name="412">412</a></td>
+              <td>Connection to SaltMaster failed! Verify the SaltMaster address and your network access.</td>
+            </tr>
+            <tr>
+              <td>5xx</td>
+              <td>
+                <strong>Errors coming from NamakSettingsActivity (GeneralSettingsActivity / DashboardSettingsActivity / SaltMasterSettingsActivity)</strong>
+              </td>
+            </tr>
+            <tr>
+              <td><a name="500">500</a></td>
+              <td>Incomplete settings. At least one Salt Master and one Dashboard are required, with all of their fields set (even if the password is empty, it needs to be set).</td>
+            </tr>
+            <tr>
+              <td>6xx</td>
+              <td>
+                <strong>Errors coming from CommandExecutionActivity</strong>
+              </td>
+            </tr>
+            <tr>
+              <td><a name="600">600</a></td>
+              <td>This should never happen! MainView always sends an item position that exists.</td>
+            </tr>
+            <tr>
+              <td><a name="601">601</a></td>
+              <td>No client type found! Client field of dashboard item is required.</td>
+            </tr>
+            <tr>
+              <td><a name="602">602</a></td>
+              <td>Client type not supported! Only supported client tyes are local and local_async.</td>
+            </tr>
+            <tr>
+              <td><a name="603">603</a></td>
+              <td>fun not found! Function (fun) field of dashboard item is required.</td>
+            </tr>
+            </tr>
+            <tr>
+              <td><a name="604">604</a></td>
+              <td>tgt not found! Target (tgt) field of dashboard item is required.</td>
+            </tr>
+            <tr>
+              <td><a name="610">610</a></td>
+              <td>This should never happen! onActivityResult should never receive any requestCode other than COMMAND_ADJUST_REQUEST.</td>
+            </tr>
+            <tr>
+              <td><a name="611">611</a></td>
+              <td>This should never happen! CommandModificationActivity always returns a valid JSON.</td>
+            </tr>
+            <tr>
+              <td><a name="612">612</a></td>
+              <td>This should never happen! savedInstanceState.getString("returned_data") always returns a valid JSON.</td>
+            </tr>
+            <tr>
+              <td><a name="620">620</a></td>
+              <td>Failed to run the command! Please verify the command and the Salt Net API service to be up and running.</td>
+            </tr>
+            <tr>
+              <td><a name="621">621</a></td>
+              <td>Unexpected response during command execution! Either Synchronous execution did not return a &quot;return&quot; array, or Asynchronous execution did not return a &quot;jid&quot;.</td>
+            </tr>
+            <tr>
+              <td><a name="622">622</a></td>
+              <td>Failed to check for execution results! Please verify the JID and the Salt Net API service to be up and running.</td>
+            </tr>
+            <tr>
+              <td><a name="623">623</a></td>
+              <td>Unexpected response when checking for execution results! Did not receive a &quot;return&quot; array from server.</td>
+            </tr>
+            <tr>
+              <td>7xx</td>
+              <td>
+                <strong>Errors coming from CommandModificationActivity</strong>
+              </td>
+            </tr>
+            <tr>
+              <td><a name="700">700</a></td>
+              <td>This should never happen! CommandExecutionActivity always sends a valid JSON.</td>
+            </tr>
+            <tr>
+              <td><a name="701">701</a></td>
+              <td>This should never happen! CommandExecutionActivity always sends a valid client type.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <aside id="sidebar">
+        <a href="https://play.google.com/apps/testing/com.amirpakdel.namak" class="button">
+          <small>opt-in</small>
+          Alpha
+        </a>
+        <a href="https://github.com/pakdel/Namak/zipball/master" class="button">
+          <small>Download</small>
+          .zip file
+        </a>
+        <a href="https://github.com/pakdel/Namak/tarball/master" class="button">
+          <small>Download</small>
+          .tar.gz file
+        </a>
+
+        <p class="repo-owner">
+          <a href="https://github.com/pakdel/Namak"></a> is maintained by <a href="https://github.com/pakdel">pakdel</a>.</p>
+
+        <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+      </aside>
+    </div>
+  </div>
+</body>
+
+</html>
